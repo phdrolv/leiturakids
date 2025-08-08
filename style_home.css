@@ -17,7 +17,7 @@ body {
 
 /* Header */
 .header {
-    background: #6FF1FE;
+    background: transparent;
     padding: 1rem 0;
     position: fixed;
     width: 100%;
@@ -50,10 +50,10 @@ body {
 }
 
 .nav-menu a {
-    color: #298ac1;
+    color: black;
     text-decoration: none;
     font-weight: bold;
-    font-size: 120%;
+    font-size: 100%;
     transition: color 0.3s ease;
     padding: 0.5rem 1rem;
     border-radius: 20px;
@@ -63,14 +63,16 @@ body {
 .nav-menu a.active {
     background: transparent;
     border: 2px solid #298ac1;
-    border-radius: 999px;
+    border-radius: 30px;
     color: white;
-    transition: 100ms;
+    transition: color 0.3s ease;
 }
 
 .auth-buttons {
     display: flex;
     gap: 1rem;
+    margin-left: -4%;
+    margin-right: -5%;
 }
 
 .btn-entrar,
@@ -90,7 +92,7 @@ body {
 }
 
 .btn-cadastrar {
-    background: #00d4aa;
+    background: #298ac1;
     color: white;
 }
 
