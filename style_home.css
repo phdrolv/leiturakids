@@ -261,7 +261,7 @@ body {
 .section-title {
     text-align: center;
     font-size: 2.5rem;
-    color: #2c3e50;
+    color: white;
     margin-bottom: 3rem;
     position: relative;
 }
@@ -448,7 +448,7 @@ body {
 /* Contact Section */
 .contact {
     padding: 5rem 0;
-    background: url(img/fundovazio.png);
+    background: url(img/fundocontato.png);
     background-position: center;
     background-size: cover;
     position: relative;
