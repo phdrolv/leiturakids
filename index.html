@@ -5,8 +5,7 @@
     <link rel="stylesheet" type="text/css" href="style_home.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <script src="script_home.js"></script>
     <title>LeituraKids - A Magia da Leitura Começa com um Clique!</title>
 </head>
@@ -19,11 +18,13 @@
             <a href="#" class="logo">LeituraKids</a>
             <nav>
                 <ul class="nav-menu">
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#about">Sobre</a></li>
-                    <li><a href="conteudo.html">Conteúdo</a></li>
-                    <li><a href="#contact">Contato</a></li>
+                    <li><a href="#inicio" class="nav-link active">Início</a></li>
+                    <li><a href="#about" class="nav-link">Sobre</a></li>
+                    <li><a href="#tutorial" class="nav-link">Tutorial</a></li>
+                    <li><a href="#services" class="nav-link">Serviços</a></li>
+                    <li><a href="#contact" class="nav-link">Contato</a></li>
                 </ul>
+
             </nav>
         </div>
     </header>
@@ -44,12 +45,12 @@
     </script>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="inicio" class="hero">
         <div class="ocean-bg"></div>
         <div class="hero-content">
             <h1 class="hero-title">LeituraKids</h1>
             <p class="hero-subtitle">A Magia da Leitura Começa com um Clique!</p>
-            <a href="#about" class="cta-button">Vamos lá!</a>
+            <a href="conteudo.html" class="cta-button">Vamos lá!</a>
         </div>
     </section>
 
@@ -201,8 +202,33 @@
         </div>
     </footer>
     <a href="#" class="ancora">
-    <span class="material-symbols-outlined">anchor</span>
-  </a>
+        <span class="material-symbols-outlined">anchor</span>
+    </a>
+    <script>
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+
+                if (scrollY >= sectionTop - sectionHeight / 3) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach((link) => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === "#" + current) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+
 </body>
 
 </html>
