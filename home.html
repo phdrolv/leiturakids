@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style_home.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script_home.js"></script>
+    <title>Leitura Kids</title>
+
+</head>
+
+<body>
+
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Elementos flutuantes decorativos -->
+    <div class="floating-elements">
+        <div class="floating-letter" style="top: 20%; left: 10%;">A</div>
+        <div class="floating-letter" style="top: 60%; left: 80%; animation-delay: -2s;">B</div>
+        <div class="floating-letter" style="top: 30%; left: 70%; animation-delay: -4s;">C</div>
+        <div class="floating-letter" style="top: 80%; left: 20%; animation-delay: -1s;">🌟</div>
+        <div class="floating-letter" style="top: 10%; left: 90%; animation-delay: -3s;">📚</div>
+    </div>
+
+    <!-- Notificação -->
+    <div class="notification" id="notification">
+        Bem-vindo ao Leitura Kids! 🎉
+    </div>
+
+    <!-- Menu Horizontal -->
+    <nav class="top-nav">
+        <ul class="nav-links">
+            <li><a href="index.html" onclick="showNotification('Página inicial')">Home</a></li>
+            <li><a href="index.html#about" onclick="showNotification('Sobre nós')">Sobre</a></li>
+            <li><a href="conteudo.html" onclick="showNotification('Conteúdo educativo')">Conteúdo</a></li>
+            <li><a href="index.html#contact" onclick="showNotification('Entre em contato')">Contato</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <button class="btn-entrar" onclick="showNotification('Área de login')">Entrar</button>
+            <button class="btn-cadastrar" onclick="showNotification('Criar conta nova')">Cadastrar</button>
+        </div>
+    </nav>
+
+    <!-- Menu Vertical -->
+    <nav class="side-nav">
+        <div class="side-nav-item active" onclick="changeSection('perfil')" title="Perfil">
+            👤
+        </div>
+        <div class="side-nav-item" onclick="changeSection('livros')" title="Livros">
+            📚
+        </div>
+        <div class="side-nav-item" onclick="changeSection('ideias')" title="Ideias">
+            💡
+        </div>
+        <div class="side-nav-item" onclick="changeSection('atividades')" title="Atividades">
+            ✏️
+        </div>
+        <div class="side-nav-item" onclick="changeSection('listas')" title="Listas">
+            📋
+        </div>
+        <div class="side-nav-item" onclick="changeSection('jogos')" title="Jogos">
+            🎮
+        </div>
+        <div class="side-nav-item" onclick="changeSection('conquistas')" title="Conquistas">
+            🏆
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <section class="hero-section">
+            <h1>Leitura Kids</h1>
+            <p>Aprender a ler nunca foi tão divertido! </p>
+        </section>
+
+        <div class="activities-grid">
+            <div class="activity-card" onclick="startActivity('alfabeto')">
+                <div class="activity-icon">🔤</div>
+                <h3>Alfabeto Interativo</h3>
+                <p>Descubra as letras através de jogos coloridos e sons divertidos!</p>
+            </div>
+
+            <div class="activity-card" onclick="startActivity('palavras')">
+                <div class="activity-icon">📝</div>
+                <h3>Formação de Palavras</h3>
+                <p>Monte palavras arrastando letras e ouça como elas soam!</p>
+            </div>
+
+            <div class="activity-card" onclick="startActivity('leitura')">
+                <div class="activity-icon">📖</div>
+                <h3>Histórias Animadas</h3>
+                <p>Leia histórias interativas com personagens que ganham vida!</p>
+            </div>
+
+            <div class="activity-card" onclick="startActivity('memoria')">
+                <div class="activity-icon">🧩</div>
+                <h3>Jogo da Memória</h3>
+                <p>Encontre pares de letras e palavras para exercitar a memória!</p>
+            </div>
+
+            <div class="activity-card" onclick="startActivity('caligrafia')">
+                <div class="activity-icon">✍️</div>
+                <h3>Prática de Escrita</h3>
+                <p>Trace letras e palavras para aprender a escrever corretamente!</p>
+            </div>
+
+            <div class="activity-card" onclick="startActivity('quiz')">
+                <div class="activity-icon">❓</div>
+                <h3>Quiz Divertido</h3>
+                <p>Responda perguntas sobre letras, sons e palavras!</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -2,32 +2,186 @@
 <html lang="pt-BR">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="style_home.css">
+    <link rel="stylesheet" type="text/css" href="style_index.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-    <script src="script_home.js"></script>
+    <script src="script_index.js" defer></script>
     <title>LeituraKids - A Magia da Leitura Começa com um Clique!</title>
 </head>
 
 <body>
+
+    <script>
+
+        function trocarlogin() {
+            // Trocar de cadastro para login
+            cancelCadastro.addEventListener("click", () => {
+                modalCadastro.style.display = "none";
+                modalLogin.style.display = "flex";
+            });
+        }
+
+        function abrirPagina() {
+            window.open("home.html", "_self")
+        }
+
+        function reiniciar() {
+            window.open("index.html", "_self")
+        }
+
+        function login() {
+
+            var user = document.getElementById("user").value;
+            var senha = document.getElementById("senha").value;
+
+            if (user === "ADM" && senha === "123") {
+                alert("Login Bem-Sucedido!");
+                abrirPagina();
+            } else {
+                alert("Usuário ou Senha Inválidos. Tente Novamente.");
+            }
+        }
+
+        function dado() {
+            alert("Usuario = ADM  |  Senha = 123");
+        }
+
+        function cadastro() {
+
+            var nome = document.getElementById("nome").value;
+            var email = document.getElementById("email").value;
+            var usuario = document.getElementById("usuario").value;
+            var password = document.getElementById("password").value;
+
+            if (nome != "" && email != "" && usuario != "" && password != "") {
+                alert("Cadastro Realizado com Sucesso!\n\nFaça o Login na Sua Nova Conta!");
+                reiniciar();
+
+            } else {
+                alert("Dados Incompletos!");
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const modalCadastro = document.getElementById("modal-cadastro");
+            const modalLogin = document.getElementById("modal-login");
+
+            const abrirCadastro = document.getElementById("abrirCadastro");
+            const abrirLogin = document.getElementById("abrirLogin");
+
+            const closeCadastro = document.getElementById("closeCadastro");
+            const closeLogin = document.getElementById("closeLogin");
+
+            const cancelCadastro = document.getElementById("cancelCadastro");
+            const cancelLogin = document.getElementById("cancelLogin");
+
+            const cadastroContent = modalCadastro.querySelector(".modal-content");
+            const loginContent = modalLogin.querySelector(".modal-content");
+
+            // Abrir modais
+            abrirCadastro.addEventListener("click", () => {
+                modalCadastro.style.display = "flex";
+            });
+
+            abrirLogin.addEventListener("click", () => {
+                modalCadastro.style.display = "none";
+                modalLogin.style.display = "flex";
+            });
+
+            // Fechar modais
+            closeCadastro.addEventListener("click", () => {
+                modalCadastro.style.display = "none";
+            });
+
+            closeLogin.addEventListener("click", () => {
+                modalLogin.style.display = "none";
+            });
+
+            // Trocar de cadastro para login
+            cancelCadastro.addEventListener("click", () => {
+                modalCadastro.style.display = "none";
+                modalLogin.style.display = "flex";
+            });
+
+            // Trocar de login para cadastro
+            cancelLogin.addEventListener("click", () => {
+                modalLogin.style.display = "none";
+                modalCadastro.style.display = "flex";
+            });
+
+            // Fechar ao clicar fora
+            modalCadastro.addEventListener("click", (e) => {
+                if (!cadastroContent.contains(e.target)) {
+                    modalCadastro.style.display = "none";
+                }
+            });
+
+            modalLogin.addEventListener("click", (e) => {
+                if (!loginContent.contains(e.target)) {
+                    modalLogin.style.display = "none";
+                }
+            });
+        });
+
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const modalCadastro = document.getElementById("modal-cadastro");
+            const abrirCadastro = document.getElementById("abrirCadastro");
+            const closeCadastro = document.getElementById("closeCadastro");
+            const cancelCadastro = document.getElementById("cancelCadastro");
+            const modalContent = modalCadastro.querySelector(".modal-content");
+
+            // Abrir modal
+            abrirCadastro.addEventListener("click", () => {
+                modalCadastro.style.display = "flex";
+            });
+
+            // Fechar com botão X
+            closeCadastro.addEventListener("click", () => {
+                modalCadastro.style.display = "none";
+            });
+
+            // Trocar para login
+            cancelCadastro.addEventListener("click", () => {
+                modalCadastro.style.display = "none";
+                modal.style.display = "flex";
+            });
+
+            // Fechar ao clicar fora do conteúdo
+            modalCadastro.addEventListener("click", (e) => {
+                if (!modalContent.contains(e.target)) {
+                    modalCadastro.style.display = "none";
+                }
+            });
+        });
+
+    </script>
 
     <!-- Header -->
     <header class="header">
         <div class="nav-container">
             <a href="#" class="logo">LeituraKids</a>
             <nav>
-                <ul class="nav-menu">
-                    <li><a href="#inicio" class="nav-link active">Início</a></li>
-                    <li><a href="#about" class="nav-link">Sobre</a></li>
-                    <li><a href="#tutorial" class="nav-link">Tutorial</a></li>
-                    <li><a href="#services" class="nav-link">Serviços</a></li>
-                    <li><a href="#contact" class="nav-link">Contato</a></li>
-                </ul>
+                <div class="mobile-menu-wrapper">
+                    <ul class="nav-menu">
+                        <li><a href="#inicio" class="nav-link active">Início</a></li>
+                        <li><a href="#about" class="nav-link">Sobre</a></li>
+                        <li><a href="#tutorial" class="nav-link">Tutorial</a></li>
+                        <li><a href="#services" class="nav-link">Serviços</a></li>
+                        <li><a href="#contact" class="nav-link">Contato</a></li>
+                    </ul>
+                </div>
             </nav>
+
+            <button class="hamburger" aria-label="Abrir menu">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+
             <div class="auth-buttons">
-                <button class="btn-entrar">Entrar</button>
-                <button class="btn-cadastrar">Cadastrar</button>
+                <button id="abrirLogin" class="btn-entrar abrirLogin">Entrar</button>
+                <button id="abrirCadastro" class="btn-cadastrar abrirCadastro">Cadastrar</button>
             </div>
 
         </div>
@@ -38,7 +192,6 @@
         window.history.scrollRestoration = 'manual';
         window.scrollTo(0, 0);
 
-        // Initialize typing effect after loading
         setTimeout(() => {
             const heroTitle = document.querySelector('.hero-title');
             if (heroTitle) {
@@ -49,17 +202,88 @@
     </script>
 
     <!-- Hero Section -->
-    <section id="inicio" class="hero">
+    <section id="inicio" class="hero" data-color="rgba(111, 241, 254, 0.8)">
         <div class="ocean-bg"></div>
         <div class="hero-content">
             <h1 class="hero-title">LeituraKids</h1>
             <p class="hero-subtitle">A Magia da Leitura Começa com um Clique!</p>
-            <a href="conteudo.html" class="cta-button">Vamos lá!</a>
+            <!-- Botão para abrir o modal -->
+            <button id="abrirLogin" class="cta-button abrirLogin">Vamos lá!</button>
+
+            <!-- Modal -->
+            <div id="modal" class="modal-overlay">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Entrar</h2>
+                        <span class="close-btn" id="closeModal">&times;</span>
+                    </div>
+
+                    <div class="modal-body">
+                        <label>
+                            Digite seu Usuário
+                            <input type="text" id="user" name="user" value="" placeholder="Usuário" required>
+                        </label>
+
+                        <label>
+                            Digite sua Senha
+                            <input type="password" id="senha" name="senha" value="" placeholder="Senha" required>
+                        </label>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-blue" onclick="login()">Entrar</button>
+                        <button class="btn btn-gray" onclick="reiniciar()">Não Possuo Conta</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal de Cadastro -->
+            <div id="modal-cadastro" class="modal-overlay" style="display: none;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Cadastrar</h2>
+                        <span class="close-btn" id="closeCadastro">&times;</span>
+                    </div>
+
+                    <div class="modal-body">
+                        <label>
+                            Nome
+                            <input type="text" id="nome" name="nome" value="" placeholder="Seu nome" required>
+                        </label>
+
+                        <label>
+                            E-mail
+                            <input type="email" id="email" name="email" value="" placeholder="Seu e-mail" required>
+                        </label>
+
+                        <label>
+                            Usuário
+                            <input type="text" id="usuario" name="usuario" value="" placeholder="Nome de usuário"
+                                required>
+                        </label>
+
+                        <label>
+                            Senha
+                            <input type="password" id="password" name="password" value="" placeholder="Crie uma senha"
+                                required>
+                        </label>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-blue" onclick="cadastro()">Cadastrar</button>
+                        <button class="btn btn-gray" id="cancelCadastro" class="cancelCadastro">Já Possuo Conta</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about" data-color="rgba(65, 210, 225, 0.8)">
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
@@ -83,7 +307,7 @@
     </section>
 
     <!-- Tutorial Section -->
-    <section id="tutorial" class="tutorial">
+    <section id="tutorial" class="tutorial" data-color="rgba(19, 133, 181, 0.8)">
         <div class="container">
             <div class="tutorial-content">
                 <div class="tutorial-image">
@@ -107,7 +331,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services">
+    <section id="services" class="services" data-color="rgba(20, 104, 139, 0.8)">
         <div class="container">
             <h2 class="section-title">Alguns de nossos Serviços</h2>
             <div class="carousel-wrapper">
@@ -147,7 +371,7 @@
 
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact" data-color="rgba(18, 75, 96, 0.8)">
         <div class="container">
             <div class="contact-content">
                 <h2 class="section-title" style="color: white; margin-bottom: 3rem;">Deixe seu feedback</h2>
@@ -205,7 +429,7 @@
             </div>
         </div>
     </footer>
-    <a href="#" class="ancora">
+    <a href="index.html#" class="ancora">
         <span class="material-symbols-outlined">anchor</span>
     </a>
     <script>
@@ -231,6 +455,8 @@
                 }
             });
         });
+
+
     </script>
 
 </body>
