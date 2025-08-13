@@ -84,3 +84,34 @@ window.addEventListener('load', function () {
         document.getElementById('loading').classList.add('hidden');
     }, 1500);
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+  
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("mobile-active");
+  
+      // troca o ícone de menu para 'close' e vice-versa
+      const icon = hamburger.querySelector(".material-symbols-outlined");
+      if(navMenu.classList.contains("mobile-active")){
+        icon.textContent = "close";
+        hamburger.setAttribute("aria-label", "Fechar menu");
+      } else {
+        icon.textContent = "menu";
+        hamburger.setAttribute("aria-label", "Abrir menu");
+      }
+    });
+  
+    // Opcional: fechar menu ao clicar em algum link do menu
+    navMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        if(navMenu.classList.contains("mobile-active")){
+          navMenu.classList.remove("mobile-active");
+          hamburger.querySelector(".material-symbols-outlined").textContent = "menu";
+          hamburger.setAttribute("aria-label", "Abrir menu");
+        }
+      });
+    });
+  });

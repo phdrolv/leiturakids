@@ -128,6 +128,39 @@ nav a::after {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Hamburger button - inicialmente escondido */
+.hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 2.5rem;
+    z-index: 1100;
+}
+
+/* Menu hamburguer aberto - estilos do menu para mobile */
+.nav-menu.mobile-active {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 70px;
+    /* abaixo do header */
+    right: 0;
+    background: rgba(111, 241, 254, 0.8);
+    width: 70vw;
+    height: 100vh;
+    padding-top: 2rem;
+    gap: 2rem;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    transform: translateX(0);
+    transition: transform 0.5s ease;
+}
+
+/* Para esconder o menu mobile inicialmente, vamos fazer o nav-menu padrão mobile ficar deslocado para direita */
+.nav-menu {
+    transition: transform 0.5s ease;
+}
 
 /* Overlay */
 .modal-overlay {
@@ -251,171 +284,6 @@ nav a::after {
     justify-content: center;
     overflow: hidden;
     margin-top: 70px;
-}
-
-.ocean-bg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.3) 2px, transparent 2px),
-        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.2) 3px, transparent 3px),
-        radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.4) 1px, transparent 1px);
-    animation: bubbles 20s infinite linear;
-}
-
-@keyframes bubbles {
-    0% {
-        transform: translateY(100vh) rotate(0deg);
-    }
-
-    100% {
-        transform: translateY(-100vh) rotate(360deg);
-    }
-}
-
-.sea-creatures {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.creature {
-    position: absolute;
-    font-size: 4rem;
-    animation: float 6s ease-in-out infinite;
-}
-
-.octopus {
-    top: 15%;
-    left: 15%;
-    color: #9C27B0;
-    animation-delay: 0s;
-}
-
-.dolphin {
-    top: 20%;
-    right: 20%;
-    color: #2196F3;
-    animation-delay: 2s;
-}
-
-.seahorse {
-    bottom: 40%;
-    left: 10%;
-    color: #E91E63;
-    animation-delay: 4s;
-}
-
-.crab {
-    bottom: 10%;
-    left: 20%;
-    color: #FF5722;
-    animation-delay: 1s;
-}
-
-.turtle {
-    bottom: 15%;
-    right: 15%;
-    color: #4CAF50;
-    animation-delay: 3s;
-}
-
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0px) rotate(0deg);
-    }
-
-    25% {
-        transform: translateY(-20px) rotate(5deg);
-    }
-
-    50% {
-        transform: translateY(-10px) rotate(-3deg);
-    }
-
-    75% {
-        transform: translateY(-15px) rotate(2deg);
-    }
-}
-
-.seaweed {
-    position: absolute;
-    bottom: 0;
-    width: 100px;
-    height: 200px;
-    background: linear-gradient(to top, #2E7D32, #4CAF50);
-    border-radius: 50px 50px 0 0;
-    animation: sway 4s ease-in-out infinite;
-}
-
-.seaweed:nth-child(1) {
-    left: 5%;
-    animation-delay: 0s;
-}
-
-.seaweed:nth-child(2) {
-    left: 10%;
-    animation-delay: 1s;
-}
-
-.seaweed:nth-child(3) {
-    right: 5%;
-    animation-delay: 2s;
-}
-
-.seaweed:nth-child(4) {
-    right: 10%;
-    animation-delay: 0.5s;
-}
-
-@keyframes sway {
-
-    0%,
-    100% {
-        transform: rotate(0deg);
-    }
-
-    25% {
-        transform: rotate(5deg);
-    }
-
-    75% {
-        transform: rotate(-5deg);
-    }
-}
-
-.coral {
-    position: absolute;
-    bottom: 0;
-    width: 80px;
-    height: 120px;
-    background: #FF5722;
-    border-radius: 0 0 40px 40px;
-    animation: pulse 3s ease-in-out infinite;
-}
-
-.coral:nth-child(odd) {
-    background: #E91E63;
-    left: 30%;
-}
-
-.coral:nth-child(even) {
-    background: #FF5722;
-    right: 30%;
-}
-
-@keyframes pulse {
-
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.1);
-    }
 }
 
 .hero-content {
@@ -684,12 +552,12 @@ nav a::after {
 }
 
 .contact video {
-  position: relative;
-  top: 0;
-  left: 0;
-  object-fit: cover;
-  width: 100%;
-  z-index: -1000;
+    position: relative;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    z-index: -1000;
 }
 
 /* Contact Section */
@@ -840,45 +708,8 @@ nav a::after {
     vertical-align: middle;
 }
 
-
-
-/* Hamburger button - inicialmente escondido */
-.hamburger {
-    display: none;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    color: white;
-    font-size: 2.5rem;
-    z-index: 1100;
-}
-
-/* Menu hamburguer aberto - estilos do menu para mobile */
-.nav-menu.mobile-active {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 70px;
-    /* abaixo do header */
-    right: 0;
-    background: rgba(111, 241, 254, 0.8);
-    width: 70vw;
-    height: 100vh;
-    padding-top: 2rem;
-    gap: 2rem;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
-    transform: translateX(0);
-    transition: transform 0.5s ease;
-}
-
-/* Para esconder o menu mobile inicialmente, vamos fazer o nav-menu padrão mobile ficar deslocado para direita */
-.nav-menu {
-    transition: transform 0.5s ease;
-}
-
 /* Mobile Responsiveness */
 
-/* Mover o menu para fora da tela quando estiver em mobile e não ativo */
 @media (max-width: 768px) {
     .hamburger {
         display: block;
@@ -905,10 +736,7 @@ nav a::after {
         display: none;
         /* escondemos os botões no mobile, podem ser incluídos no menu se quiser depois */
     }
-}
 
-
-@media (max-width: 768px) {
     .nav-menu {
         display: none;
     }
@@ -935,9 +763,5 @@ nav a::after {
 
     .form-buttons {
         flex-direction: column;
-    }
-
-    .creature {
-        font-size: 2rem;
     }
 }

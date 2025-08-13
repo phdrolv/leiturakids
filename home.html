@@ -1,9 +1,11 @@
-<!DOCTYPE html>
+Você disse:
+html: <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <link rel="stylesheet" type="text/css" href="style_home.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script_home.js"></script>
@@ -18,37 +20,38 @@
         <div class="loading-spinner"></div>
     </div>
 
-    <!-- Elementos flutuantes decorativos -->
-    <div class="floating-elements">
-        <div class="floating-letter" style="top: 20%; left: 10%;">A</div>
-        <div class="floating-letter" style="top: 60%; left: 80%; animation-delay: -2s;">B</div>
-        <div class="floating-letter" style="top: 30%; left: 70%; animation-delay: -4s;">C</div>
-        <div class="floating-letter" style="top: 80%; left: 20%; animation-delay: -1s;">🌟</div>
-        <div class="floating-letter" style="top: 10%; left: 90%; animation-delay: -3s;">📚</div>
-    </div>
-
     <!-- Notificação -->
     <div class="notification" id="notification">
         Bem-vindo ao Leitura Kids! 🎉
     </div>
 
-    <!-- Menu Horizontal -->
-    <nav class="top-nav">
-        <ul class="nav-links">
-            <li><a href="index.html" onclick="showNotification('Página inicial')">Home</a></li>
-            <li><a href="index.html#about" onclick="showNotification('Sobre nós')">Sobre</a></li>
-            <li><a href="conteudo.html" onclick="showNotification('Conteúdo educativo')">Conteúdo</a></li>
-            <li><a href="index.html#contact" onclick="showNotification('Entre em contato')">Contato</a></li>
-        </ul>
-        <div class="auth-buttons">
-            <button class="btn-entrar" onclick="showNotification('Área de login')">Entrar</button>
-            <button class="btn-cadastrar" onclick="showNotification('Criar conta nova')">Cadastrar</button>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo">LeituraKids</a>
+            <nav>
+                <div class="mobile-menu-wrapper">
+                    <ul class="nav-menu">
+                        <li><a href="index.html" onclick="showNotification('Página inicial')">Início</a></li>
+                        <li><a href="index.html#about" onclick="showNotification('Sobre nós')">Sobre</a></li>
+                        <li><a href="conteudo.html" onclick="showNotification('Conteúdo educativo')">Tutorial</a></li>
+                        <li><a href="conteudo.html" onclick="showNotification('Conteúdo educativo')">Serviços</a></li>
+                        <li><a href="index.html#contact" onclick="showNotification('Entre em contato')">Contato</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <button class="hamburger" aria-label="Abrir menu">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
         </div>
-    </nav>
+        </div>
+    </header>
+
+
 
     <!-- Menu Vertical -->
     <nav class="side-nav">
-        <div class="side-nav-item active" onclick="changeSection('perfil')" title="Perfil">
+        <div class="side-nav-item active" onclick="window.location.href='home.html'" onclick="changeSection('perfil')" title="Perfil">
             👤
         </div>
         <div class="side-nav-item" onclick="changeSection('livros')" title="Livros">
@@ -117,4 +120,5 @@
         </div>
     </main>
 </body>
+
 </html>
