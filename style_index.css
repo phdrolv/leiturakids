@@ -710,7 +710,7 @@ nav a::after {
 
 /* Mobile Responsiveness */
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .hamburger {
         display: block;
     }
@@ -739,6 +739,10 @@ nav a::after {
 
     .nav-menu {
         display: none;
+    }
+
+    .nav-menu a{
+        margin-left: 10%;
     }
 
     .hero-title {
